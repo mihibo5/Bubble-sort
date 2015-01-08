@@ -12,19 +12,14 @@ public class Sort{
 	/*SORT ARRAY AND RETURN AS INT ARRAY*/
 	public static int[] SortArray(int unsorted[]){
 		for (int i = 0; i < unsorted.length - 1; i++){						//implementing method array length times
-			sort(unsorted);													//calling method
+			for (int j = 0; j < unsorted.length - 1; j++){					//going through array
+				if (unsorted[j] < unsorted[j + 1]){							//checking if array on j is less then array on j+1
+					int current = unsorted[j];								//saves number
+					unsorted[j] = unsorted[j + 1];							//swaps spots
+					unsorted[j + 1] = current;								//still swapping
+				}
+			}													
 		}
 		return unsorted;													//returning sorted array
-	}
-	
-	/*PARTAIL SORT*/
-	private static void sort(int unsorted[]){
-		for (int i = 0; i < unsorted.length - 1; i++){						//going through array
-			if (unsorted[i] < unsorted[i + 1]){								//checking if array on i is less then array on i+1
-				int current = unsorted[i];									//saves number
-				unsorted[i] = unsorted[i + 1];								//swaps spots
-				unsorted[i + 1] = current;									//still swapping
-			}
-		}
 	}
 }
